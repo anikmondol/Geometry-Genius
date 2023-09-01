@@ -64,15 +64,16 @@ function calculateEllipseArea(){
     const minor = getInputValue('ellipse-minor-radius');
 
     const area = 3.14159265359 * major * minor;
-
-    setElementInnerText('ellipse-area',area)
+    const areaTowDecimal = area.toFixed(2);
+    setElementInnerText('ellipse-area',areaTowDecimal);
 }
 
 
-// reusable get input value field in number
+// reusable get input value field in number 
 function getInputValue(fieldId){
     const inputFiled = document.getElementById(fieldId);
     const value = parseFloat(inputFiled.value);
+    inputFiled.value = "";
     return value; 
 
 }
